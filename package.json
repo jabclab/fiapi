@@ -1,0 +1,26 @@
+{
+  "name": "fiapi",
+  "version": "0.0.0",
+  "description": "Tool to aid in constructing APIs using files",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jabclab/fiapi.git"
+  },
+  "keywords": [
+    "api",
+    "file"
+  ],
+  "author": "jabclab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jabclab/fiapi/issues"
+  },
+  "homepage": "https://github.com/jabclab/fiapi",
+  "devDependencies": {
+    "mocha": "^1.21.4"
+  }
+}
