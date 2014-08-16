@@ -4,9 +4,9 @@
   "description": "Tool to aid in constructing APIs using files",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec --bail --check-leaks --growl test/ test/acceptance/",
-    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/ test/acceptance",
-    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/ test/acceptance",
+    "test": "mocha --reporter spec --bail --check-leaks --globals 'sandbox' --growl test/fixtures/ test/ test/acceptance/",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/fixtures/ test/support/env --reporter dot --check-leaks --globals 'sandbox' test/ test/acceptance",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks --globals 'sandbox' test/fixtures test/ test/acceptance",
     "watch": "nodemon --quiet --ext 'js,json' --exec 'npm test'"
   },
   "repository": {
@@ -24,9 +24,13 @@
   },
   "homepage": "https://github.com/jabclab/fiapi",
   "devDependencies": {
+    "chai": "^1.9.1",
     "istanbul": "^0.3.0",
     "mocha": "^1.21.4",
-    "nodemon": "^1.2.1"
+    "nodemon": "^1.2.1",
+    "rewire": "^2.1.0",
+    "sinon": "^1.10.3",
+    "sinon-chai": "^2.5.0"
   },
   "engines": {
     "node": ">= 0.10.0"
