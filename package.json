@@ -4,7 +4,8 @@
   "description": "Tool to aid in constructing APIs using files",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha -R spec"
+    "test": "mocha -R spec --bail --check-leaks --growl",
+    "watch": "nodemon --quiet --ext 'js,json' --exec 'npm test'"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,10 @@
   },
   "homepage": "https://github.com/jabclab/fiapi",
   "devDependencies": {
-    "mocha": "^1.21.4"
+    "mocha": "^1.21.4",
+    "nodemon": "^1.2.1"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
   }
 }
