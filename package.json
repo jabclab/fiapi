@@ -7,7 +7,7 @@
     "test": "mocha --reporter spec --bail --check-leaks --globals 'sandbox' --growl test/fixtures/ test/ test/acceptance/",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/fixtures/ test/support/env --reporter dot --check-leaks --globals 'sandbox' test/ test/acceptance",
     "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks --globals 'sandbox' test/fixtures test/ test/acceptance",
-    "watch": "mocha --watch --reporter spec --bail --check-leaks --globals 'sandbox' --growl test/fixtures/ test/ test/acceptance/"
+    "watch": "nodemon --quiet --ext 'js,json' --exec 'npm test'"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,8 @@
     "mocha": "^1.21.4",
     "rewire": "^2.1.0",
     "sinon": "^1.10.3",
-    "sinon-chai": "^2.5.0"
+    "sinon-chai": "^2.5.0",
+    "nodemon": "^1.2.1"
   },
   "engines": {
     "node": ">= 0.10.0"
