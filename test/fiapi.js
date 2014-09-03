@@ -16,4 +16,16 @@ describe('fiapi', function () {
   it('should export a function', function () {
     expect(require(filepath)).to.be.a('function');
   });
+
+  it('should call callback with TypeError if first arg is specified and is not a function or object', function () {
+    expect(fiapi.bind(null, [], function () {})).to.throw(
+      TypeError, 'invalid arguments: expected object or function'
+    );
+  });
+
+  it('should call callback with TypeError if second arg is not a function', function () {
+    expect(fiapi.bind(null, {}, {})).to.throw(
+      TypeError, 'invalid arguments: callback must be passed'
+    );
+  });
 });
